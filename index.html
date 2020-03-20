@@ -5,22 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Document</title>
-  <link rel="stylesheet" href="index.css">
+  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./index.css">
 </head>
 
-<body class="container-fluid">
-  <header >
-    <h1>Sentimentos & Necessidades</h1>
+<body class="container-fluid container-sm bg-dark">
+  
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+    <img class="logo" src="sentimentosnecessidades-logo.png" alt="Sentimentos & Necessidades">
     <nav>
-      <a href="/sentimentos">Sentimentos</a>
-      <a href="/necessidades">Necessidades</a>
+      <a class="btn btn-danger" href="/sentimentos">Sentimentos</a>
+      <a class="btn btn-warning" href="/necessidades">Necessidades</a>
     </nav>
   </header>
   <main>
-    <h2>Coletânea das cartas do baralho das emoções</h2>
+    <h1>Coletânea das cartas baralho das emoções</h1>
     <p>Aqui estão 75 sentimentos e 75 necessidades possíveis para facilitar seu acesso a si mesmo</p>
+    <section>
+      <div class="card mb-4">
+        <img class="card-img-top" src="/sentimentos/inspirade.jpg" alt="Inspirade">
+        <div class="card-body bg-dark">
+          <h5 class="card-title">Sentimentos</h5>
+          <p class="card-text">
+            Inspirado, paralisado, seguro, confuso, relaxado, irritado... São inúmeras emoções que passam por nós todos os dias, colecionamos algumas que podem facilitar a identificação pra você, agora é com você {inserir emoji}
+          </p>
+          <a href="#" class="btn btn-danger">Leia os sentimentos</a>
+        </div>
+      </div>
+        <div class="card mb-4">
+          <img class="card-img-top" src="/necessidades/competência.jpg" alt="Competência">
+          <div class="card-body bg-dark">
+            <h5 class="card-title">Necessidades</h5>
+            <p class="card-text">
+              Espaçp, reconhecimento, fluidez, apoderamento, conexão, intimidade... Muitas necessidades surgem a partir das nossas emoções, compreendê-las nos ajuda a expor incômodos e desejos para quem amamos {inserir emoji}
+            </p>
+            <a href="#" class="btn btn-danger">Leia as necessidades</a>
+        </div>
+    </section>
   </main>
   <footer>
     Feito com carinho pelo Coletivo Akangatu

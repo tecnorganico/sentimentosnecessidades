@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.container-fluid {
+  margin: 0 auto !important;
+}
+.logo {
+  width: 200px;
+  height: 200px;
+}
+
+@media (min-width: 576px) { 
+  
+}
