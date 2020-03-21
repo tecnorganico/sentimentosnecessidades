@@ -1,9 +1,41 @@
 * {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 20px;
   color: #ddd;
   text-decoration: none;
 }
+
+/* Começo --- Bootstrap Reset */ 
+
+.col, .col-sm { /* Ajusta o padding e margin do Grid System */ 
+  padding: 0;
+  margin: 8px 8px;
+}
+
+/* Fim --- Bootstrap Reset */ 
+
+body {
+  background-color: #FFE53B;
+  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+  background-attachment: fixed;
+}
+
+header {
+  background-color:transparent;
+}
+/* Backgrounds Personalizados Source: CSSGradient.io */
+.bg-dark-gradient {
+  background: rgb(26,27,29);
+  background: linear-gradient(0deg, rgba(26,27,29,1) 0%, rgba(52,58,64,1) 100%); 
+}
+
+.grand-title {
+  font-size: 48px;
+  background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(43, 43, 43));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 .container-fluid {
   margin: 0 auto !important;
@@ -13,6 +45,13 @@
   height: 200px;
 }
 
-@media (min-width: 576px) { 
-  
+@media (max-width: 576px) { 
+  .logo {
+  width: 230px;
+  height: 230px;
+  margin: 0 auto;
+  }
+  nav {
+    display: none;
+  }
 }
