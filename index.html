@@ -1,72 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Sentimentos e Necessidades</title>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Endereço para a página de estilos  -->
   <link rel="stylesheet" href="./index.css">
 </head>
 
-<body class="container-fluid container-sm bg-dark">
-
-  <header class="navbar navbar-expand-lg navbar-dark justify-content-between">
-    <img class="logo" src="sentimentosnecessidades-logo.png" alt="Sentimentos & Necessidades">
-    <nav>
-      <a class="btn btn-danger" href="/sentimentos">Sentimentos</a>
-      <a class="btn btn-warning" href="/necessidades">Necessidades</a>
-    </nav>
+<body>
+  <header class="topo" >
+    <img src="logo.png">
+    <h1>Palavras sugestões para sentimentos e necessidades</h1>
+    <p>Aqui estão 75 sentimentos e 75 necessidades possíveis para auxiliar teu autoreconhecimento</p>
+    <!-- <nav>
+      <a href="sentimentos/">Sentimentos |</a>
+      <a href="necessidades/">Necessidades</a>
+    </nav> -->
   </header>
-  <main>
-    <h1 class="grand-title">Coletânea de cartas do baralho das emoções</h1>
-    <p>Aqui estão 75 sentimentos e 75 necessidades possíveis para facilitar seu acesso a si mesmo</p>
-    <section>
-      <div class="row">
-        <div class="card col-sm bg-dark-gradient">
-          <img class="card-img-top" src="./sentimentos/inspirade.jpg" alt="Inspirade">
-          <div class="card-body bg-dark-gradient">
-            <h5 class="card-title">Sentimentos</h5>
-            <p class="card-text">
+      <div class="cartas-container">
+        <div class="cartas">
+          <img src="sentimentos/confusa.jpg" class="cartas-img">
+          <div class="cartas-texto">
+            <h2>Sentimentos</h2>
+            <p>
               Inspirado, paralisado, seguro, confuso, relaxado, irritado... São inúmeras emoções que passam por nós
               todos
               os dias, colecionamos algumas que podem facilitar a identificação pra você, agora é com você {inserir
               emoji}
             </p>
-            <a href="#" class="btn btn-danger ">Leia os sentimentos</a>
+            <a href="sentimentos.html" >Leia os sentimentos</a>
           </div>
         </div>
-        <div class="card col-sm bg-dark-gradient">
-          <img class="card-img-top" src="./necessidades/competência.jpg" alt="Competência">
-          <div class="card-body bg-dark-gradient">
-            <h5 class="card-title">Necessidades</h5>
-            <p class="card-text">
+        <div class="cartas">
+          <img src="necessidades/lucidez.jpg">
+          <div class="cartas-texto">
+            <h2>Necessidades</h2>
+            <p>
               Espaçp, reconhecimento, fluidez, apoderamento, conexão, intimidade... Muitas necessidades surgem a partir
               das nossas emoções, compreendê-las nos ajuda a expor incômodos e desejos para quem amamos {inserir emoji}
             </p>
-            <a href="#" class="btn btn-warning">Leia as necessidades</a>
+            <a href="necessidades/" >Leia as necessidades</a>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="push"></div>
   <footer>
-    Feito com carinho pelo Coletivo Akangatu
+    Feito com jeitinho pela InfroCria
   </footer>
-
-
-
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,57 +1,114 @@
+/* 
+  Trecho para zerar alguns estilos nativos de navegadores diversos  ]
+  Também inclui estilos padrões para o projeto
+*/
 * {
   box-sizing: border-box;
-  font-size: 20px;
   color: #ddd;
   text-decoration: none;
 }
 
-/* Começo --- Bootstrap Reset */ 
-
-.col, .col-sm { /* Ajusta o padding e margin do Grid System */ 
-  padding: 0;
-  margin: 8px 8px;
+html, body {
+  background-color: #252525;
+  margin: 0 auto; /* Centraliza na horizontal */
+  height: 100%;
+  font: 16px Courier; /* Permite que daqui em diante use a medida rem */
+  line-height: 1.5;
 }
-
-/* Fim --- Bootstrap Reset */ 
-
-body {
-  background-color: #FFE53B;
-  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
-  background-attachment: fixed;
+.topo {
+  /* background-color: red; */
+  text-align: center;
+  padding: 16px;
+  font-size: 1em;
 }
-
-header {
-  background-color:transparent;
-}
-/* Backgrounds Personalizados Source: CSSGradient.io */
-.bg-dark-gradient {
-  background: rgb(26,27,29);
-  background: linear-gradient(0deg, rgba(26,27,29,1) 0%, rgba(52,58,64,1) 100%); 
-}
-
-.grand-title {
-  font-size: 48px;
-  background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(43, 43, 43));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-.container-fluid {
-  margin: 0 auto !important;
-}
-.logo {
-  width: 200px;
-  height: 200px;
-}
-
-@media (max-width: 576px) { 
-  .logo {
-  width: 230px;
-  height: 230px;
+.topo img {
+  /* background-color: orange; */
+  width: 244px;
+  height: 244px;
   margin: 0 auto;
+}
+
+/* 
+  Para manter o footer agarrado no fundo
+  independente do tamanho do conteúdo do .cartas-container */
+footer, .push {
+  height: 50px;
+  text-align:center;
+}
+
+.cartas-container {
+  /* background-color: black; */
+  display: flex;
+  flex: row wrap;
+  justify-content: center;
+  width: 100vw;
+  padding: 32px;
+  min-height: 100%; /* CSS-Tricks macete para o */
+  margin-bottom: 0 auto -50px;
+  font-size: 1.2em;
+}
+
+.cartas {
+  /* background-color: red; */
+  padding: 16px;
+  min-width: 244px;
+  max-width: 576px;
+}
+.cartas-img {
+  min-width: 244px;
+  max-width: 500px;
+  min-height: 244px;
+  max-height: 500px;
+  border-radius: 16px;
+  box-shadow: 4px 4px 16px 8px #000000;
+  margin: 8px auto;
+}
+.cartas p {
+  width: 500px;
+}
+.cartas h2 {
+  font-weight: bolder;
+}
+.cartas a {
+  font-weight: bolder;
+  text-decoration: red;
+  text-decoration-line: underline;
+  transition: font-weight, text-decoration-style 2s ease-in-out;
+}
+.cartas a:hover {
+  transition: font-weight, text-decoration-style 1s ease-in-out;
+  font-weight: lighter;
+  text-decoration-line: overline;
+}
+
+@media (max-width: 1126px) { 
+  .cartas-container {
+    /* background-color: blue; */
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
   }
-  nav {
-    display: none;
+  
+  .cartas {
+    /* background-color: black; */
+    margin: 0 auto 32px;
   }
+  .cartas img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    box-shadow: 4px 4px 16px 8px #000000;
+  }
+  .cartas h2 {
+    font-weight: bolder;
+  }
+  .cartas p {
+    max-width: 100%;
+  }
+  .cartas a {
+    font-weight: bolder;
+    text-decoration: red;
+    text-decoration-line: underline;
+  }
+  
 }
