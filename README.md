@@ -9,3 +9,7 @@ Acesse o site, toque em Sentimentos ou em Necessidades e veja as palavras ao des
 ### Construção
 
 Ainda estou aprendendo, a sentir e a programar. Projeto ainda em andamento, contribuições são bem-vindas.
+
+### Agradecimentos
+
+Gratidão total pra Casa Naara que foi onde conheci o baralho das emoções, contendo esses mesmos sentimentos e necessidades encontrados aqui. Agradeço Raienny Regyna por elaborar o desenho das cartas no Canva. Matheus Freitas fortaleceu legal no desenho do sucinto JavaScript que serve as palavras e o desenho com agilidade.
