@@ -28,23 +28,15 @@ html, body {
   margin: 0 auto;
 }
 
-/* 
-  Para manter o footer agarrado no fundo
-  independente do tamanho do conteúdo do .cartas-container */
-footer, .push {
-  height: 50px;
-  text-align:center;
-}
-
 .cartas-container {
   /* background-color: black; */
   display: flex;
   flex: row wrap;
   justify-content: center;
   width: 100vw;
-  padding: 32px;
-  min-height: 100%; /* CSS-Tricks macete para o */
-  margin-bottom: 0 auto -50px;
+  /* padding: 32px; */
+  min-height: 100%; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
+  margin-bottom: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
   font-size: 1.2em;
 }
 
@@ -81,17 +73,25 @@ footer, .push {
   text-decoration-line: overline;
 }
 
+/* 
+  Para manter o footer agarrado no fundo
+  independente do tamanho do conteúdo do .cartas-container */
+  footer, .push {
+    height: 16px;
+    text-align: center;
+  }
+
+
 @media (max-width: 1126px) { 
   .cartas-container {
     /* background-color: blue; */
     display: block;
     margin: 0 auto;
-    padding: 8px;
   }
   
   .cartas {
     /* background-color: black; */
-    margin: 0 auto 32px;
+    margin: 0 auto;
   }
   .cartas img {
     width: 100%;
