@@ -28,29 +28,29 @@ html, body {
   margin: 0 auto;
 }
 
+.topo a {
+  font-weight: bolder;
+  text-decoration: red;
+  text-decoration-line: underline;
+  transition: font-weight, text-decoration-style 2s ease-in-out;
+}
+
 .cartas-container {
   /* background-color: black; */
-  display: flex;
-  flex: row wrap;
-  justify-content: center;
   width: 100vw;
-  /* padding: 32px; */
   min-height: 100%; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
   margin-bottom: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
   font-size: 1.2em;
 }
 
 .cartas {
-  /* background-color: red; */
+    /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 16px;
-  min-width: 244px;
-  max-width: 576px;
 }
 .cartas-img {
-  min-width: 244px;
-  max-width: 500px;
-  min-height: 244px;
-  max-height: 500px;
   border-radius: 16px;
   box-shadow: 4px 4px 16px 8px #000000;
   margin: 8px auto;
@@ -91,7 +91,12 @@ html, body {
   
   .cartas {
     /* background-color: black; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin: 0 auto;
+    max-width: 576px;
+
   }
   .cartas img {
     width: 100%;
