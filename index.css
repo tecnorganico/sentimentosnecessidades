@@ -31,29 +31,36 @@ html, body {
 .cartas-container {
   /* background-color: black; */
   display: flex;
-  flex: row wrap;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   /* padding: 32px; */
   min-height: 100%; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
   margin-bottom: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
   font-size: 1.2em;
 }
 
-.cartas {
-  /* background-color: red; */
-  padding: 16px;
+.cartas-index {
   min-width: 244px;
   max-width: 576px;
+  margin-right: 24px;
 }
-.cartas-img {
+
+.cartas {
+  padding: 16px;
   min-width: 244px;
-  max-width: 500px;
-  min-height: 244px;
-  max-height: 500px;
+  /* Mostra em grid as cartinhas */
+  display: grid;
+  grid-template-columns: 500px 500px; /*faz com que cada coluna fique com 500px, igual o tamanho da imagem*/
+  column-gap: 32px;
+  row-gap: 40px;
+}
+
+.cartas-img {
+  width: 500px; /*Setar um valor fixo das cartas é uma boa pratica https://www.onely.com/blog/cumulative-layout-shift/*/
+  height: 500px;
   border-radius: 16px;
   box-shadow: 4px 4px 16px 8px #000000;
-  margin: 8px auto;
 }
 .cartas p {
   width: 500px;
@@ -82,23 +89,23 @@ html, body {
   }
 
 
-@media (max-width: 1126px) { 
-  .cartas-container {
-    /* background-color: blue; */
-    display: block;
-    margin: 0 auto;
+@media (max-width: 1200px) {
+  .cartas-index {
+    margin-bottom: 24px;
+    margin-right: 0px;
   }
-  
+
+  /* Quando a tela ficar menor que 1200px, mostra apenas uma coluna das cartas, p melhor visualizacao no celular/tablets */ 
   .cartas {
-    /* background-color: black; */
-    margin: 0 auto;
+    grid-template-columns: auto;
+    column-gap: initial;
   }
-  .cartas img {
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    box-shadow: 4px 4px 16px 8px #000000;
+
+  .cartas-img {
+    width: 360px;
+    height: 360px;
   }
+
   .cartas h2 {
     font-weight: bolder;
   }
