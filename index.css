@@ -3,28 +3,53 @@
   Também inclui estilos padrões para o projeto
 */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  color: #ddd;
+  color: #343434;
   text-decoration: none;
 }
 
 html, body {
-  background-color: #252525;
-  margin: 0 auto; /* Centraliza na horizontal */
-  height: 100%;
-  font: 16px Courier; /* Permite que daqui em diante use a medida rem */
   line-height: 1.5;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+  top: 0px;
+  left: 0px;
+  background: no-repeat padding-box;
+  background: #FBF3E6 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+header {
+  /*background-color: red;*/
+}
+
+#descricao {
+  /*background-color: yellow;*/
+  top: 245px;
+  left: 140px;
+  width: 1313px;
+  height: 108px;
+
+  text-align: left;
+  font: normal 24px/36px Titillium Web;
+  letter-spacing: 0px;
+  color: #343434;
+  opacity: 1;
 }
 .topo {
   /* background-color: red; */
-  text-align: center;
+  text-align: left;
   padding: 16px;
   font-size: 1em;
 }
 .topo img {
   /* background-color: orange; */
-  width: 244px;
-  height: 244px;
+  width: 506px;
+  height: 113px;
   margin: 0 auto;
 }
 
@@ -68,7 +93,7 @@ html, body {
 
 
 .cartas p {
-  width: 500px;
+  width: 300px;
 }
 .cartas h2 {
   font-weight: bolder;
@@ -85,48 +110,3 @@ html, body {
   text-decoration-line: overline;
 }
 
-/* 
-  Para manter o footer agarrado no fundo
-  independente do tamanho do conteúdo do .cartas-container */
-  footer, .push {
-    height: 16px;
-    text-align: center;
-  }
-
-
-@media (max-width: 1126px) { 
-  .cartas-container {
-    /* background-color: blue; */
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .cartas {
-    /* background-color: black; */
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    max-width: 576px;
-
-  }
-  .cartas-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    box-shadow: 4px 4px 16px 8px #000000;
-  }
-  
-  .cartas h2 {
-    font-weight: bolder;
-  }
-  .cartas p {
-    max-width: 100%;
-  }
-  .cartas a {
-    font-weight: bolder;
-    text-decoration: red;
-    text-decoration-line: underline;
-  }
-  
-}
