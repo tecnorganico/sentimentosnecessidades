@@ -39,9 +39,14 @@ html, body {
     background-color: red;
   }
   .topo {
-    background-color: grey; 
+    /* background-color: red; */
     text-align: left;
+    padding: 16px;
+    padding: 16px;
     font-size: 1em;
+    text-align: left;
+    font: normal 24px/36px Titillium Web;
+    color: #343434;
   }
   .topo img {
     /* background-color: orange; */
@@ -50,10 +55,10 @@ html, body {
     margin: 0 auto;
   }
 
-  .topo a {
-    font-weight: bolder;
-    
-  }
+ .topo a{
+    border: 1px solid black;
+    padding: 4px;
+    margin: 16px 0;
 
 #descricao a {
     padding: 10px 30px;
@@ -63,16 +68,27 @@ html, body {
     height: 75px;
 }
 
-
+ .topo p {
+   margin-bottom:16px;
+ }
+  #azul{
+    background-color: #1B85F7;
+    transition: 0.2s ease-in-out;
+  }
+    background-color: #1B85F7;
 #azul {
     padding: 10px 30px;
     border: 1px solid #707070;
     background-color: transparent;
 }
+  #laranja{
+    background-color: #FC7F23;
+    transition: 0.2s ease-in-out;
+  }
+    background-color: #FC7F23;
+  }
 
 #laranja {
-    border: 1px solid #707070;
-    background-color: transparent;
 }
 
 #azul:hover {
@@ -81,14 +97,20 @@ html, body {
     color: white;
     background-color: #0059c3;
 }
+    transition: 0.2s ease-in-out;
+  }
+    
+  }
 
 #laranja:hover {
-    border: 1px solid black;
-    background-color: transparent;
     border: 1px solid #707070;
     background-color: #FC7F23;
     color: white;
 }
+    transition: 0.2s ease-in-out;
+  }
+
+  }
 
   .cartas-container {
     /* background-color: black; */
@@ -96,14 +118,14 @@ html, body {
     min-height: 100%; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
     margin-bottom: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
     font-size: 1.2em;
-    display: flex;
   }
 
   .cartas {
     /* background-color: red; */
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 16px;
+    padding: 16px 0;
   }
   .cartas-img {
     width: 500px;
@@ -111,16 +133,12 @@ html, body {
     border-radius: 16px;
     box-shadow: 4px 4px 16px 8px #000000;
     margin: 8px auto;
-
   }
-
   .cartas img:hover {
     opacity: 0.98;
     transform: scale(1.02);
     transition: all 0.2s ease-in, all 0.2s ease-out;
   }
-
-
   .cartas p {
     width: 300px;
   }
