@@ -28,25 +28,13 @@
   header {
     /*background-color: red;*/
   }
-
-  #descricao {
-    /*background-color: yellow;*/
-    top: 245px;
-    left: 140px;
-    width: 1313px;
-    height: 108px;
-
-    text-align: left;
-    font: normal 24px/36px Titillium Web;
-    letter-spacing: 0px;
-    color: #343434;
-    opacity: 1;
-  }
   .topo {
     /* background-color: red; */
-    text-align: left;
     padding: 16px;
     font-size: 1em;
+    text-align: left;
+    font: normal 24px/36px Titillium Web;
+    color: #343434;
   }
   .topo img {
     /* background-color: orange; */
@@ -55,45 +43,38 @@
     margin: 0 auto;
   }
 
-  .topo a {
+ .topo a{
+    border: 1px solid black;
+    padding: 4px;
+    margin: 16px 0;
     font-weight: bolder;
-    
   }
-
-  #descricao a{
-    padding: 5px;
-    border: 1px solid black;
-
-  }
-
+ .topo p {
+   margin-bottom:16px;
+ }
   #azul{
-    padding: 5px;
-    border: 1px solid black;
     background-color: #1B85F7;
+    transition: 0.2s ease-in-out;
   }
 
   #laranja{
-    padding: 5px;
-    border: 1px solid black;
     background-color: #FC7F23;
+    transition: 0.2s ease-in-out;
   }
 
   #azul:hover{
     padding: 5px;
     border: 1px solid black;
     background-color: transparent;
-    
+    transition: 0.2s ease-in-out;
   }
 
   #laranja:hover{
     padding: 5px;
     border: 1px solid black;
     background-color: transparent;
-
+    transition: 0.2s ease-in-out;
   }
-
-
-
 
   .cartas-container {
     /* background-color: black; */
@@ -101,14 +82,14 @@
     min-height: 100%; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
     margin-bottom: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
     font-size: 1.2em;
-    display: flex;
   }
 
   .cartas {
     /* background-color: red; */
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 16px;
+    padding: 16px 0;
   }
   .cartas-img {
     width: 500px;
@@ -116,16 +97,12 @@
     border-radius: 16px;
     box-shadow: 4px 4px 16px 8px #000000;
     margin: 8px auto;
-
   }
-
   .cartas img:hover {
     opacity: 0.98;
     transform: scale(1.02);
     transition: all 0.2s ease-in, all 0.2s ease-out;
   }
-
-
   .cartas p {
     width: 300px;
   }
