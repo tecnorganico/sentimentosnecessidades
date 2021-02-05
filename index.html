@@ -2,69 +2,42 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-  <title>Artigos e vídeos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="principal.css" media="screen" />
+    <title>Artigos e vídeos</title>
 
-  <!-- Endereço para a página de estilos  -->
-  <link rel="stylesheet" href="./index.css">
+    <!-- Endereço para a página de estilos  -->
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="principal.css">
 </head>
 
 <body>
-
-    <header class="topo">
-        <img src="logo.png">
-        <div id="descricao">
-            <p>Acervo de conteúdo com foco em Direitos Autorais organizado pelo ITS Rio. Com a análise dos casos, vamos conseguir entender os elementos fundamentais dos direitos autorais, como quem é autor, que direitos um autor tem, como esses direitos circulam por meio de contratos e em que medida podemos usar obras de outras pessoas sem pedir autorização.</p>
-            <nav>
-                <a id="azul" href="artigos.html">Artigos</a>
-                <a id="laranja" href="videos.html">Vídeos</a>
-            </nav>
-        </div>
-
-    </header>
-
-    <div class="cartas-container">
-        <div class="cartas">
-            <a href="artigo1.html"><img src="sentimentos/exemplo-artigo-1.png" alt="Avatar" style="width:100%"></a>
-            <a href="video1.html"><img src="necessidades/exemplo-video.png" alt="Avatar" style="width:100%"></a>
-
-
-            <a href="artigo2.html"><img src="sentimentos/exemplo-artigo-2.png" alt="Avatar" style="width:100%"></a>
-            <a href="video2.html"><img src="necessidades/exemplo-video-2.png" alt="Avatar" style="width:100%"></a>
-
-
-            <a href="artigo3.html"><img src="sentimentos/exemplo-artigo-3.png" alt="Avatar" style="width:100%"></a>
-            <a href="video3.html"><img src="necessidades/exemplo-video-3.png" alt="Avatar" style="width:100%"></a>
-
-        
-        </div>
-    </div>
-  <header class="topo" >
-    <img src="logo.png">
+   <header class="topo" >
+    <a href="index.html" style="border:transparent;"><img src="logo.png" ></a>
     <div id="descricao">
       <p>Acervo de conteúdo com foco em Direitos Autorais organizado pelo ITS Rio. Com a análise dos casos, vamos conseguir entender os elementos fundamentais dos direitos autorais, como quem é autor, que direitos um autor tem, como esses direitos circulam por meio de contratos e em que medida podemos usar obras de outras pessoas sem pedir autorização.</p>
       <nav>
-        <a id="azul" href="./artigos/artigos.html">Artigos</a> 
-        <a id="laranja" href="./videos/videos.html">Vídeos</a>
+        <a class="azul" href="./artigos/artigos.html">Artigos</a> 
+        <a class="laranja" href="./videos/videos.html">Vídeos</a>
       </nav> 
     </div>
   </header>
 
   <div class="cartas-container">
     <div class="cartas">    
-      <a href="artigo1.html"><img src="artigos/thumb-artigo-1.png" alt="Avatar" style="width:100%"></a> 
-       <a href="videos/video1.html"><img src="videos/thumb-video-1.png" alt="Avatar" style="width:100%"></a>              
+      <a href="artigo1.html"><img src="artigos/thumb-artigo-1.png" alt="Avatar"></a> 
+       <a href="videos/video1.html"><img src="videos/thumb-video-1.png" alt="Avatar" ></a>              
                   
       
-      <a href="artigo2.html"><img src="artigos/thumb-artigo-2.png" alt="Avatar" style="width:100%"></a>
-       <a href="videos/video2.html"><img src="videos/thumb-video-2.png" alt="Avatar" style="width:100%"></a>              
+      <a href="artigo2.html"><img src="artigos/thumb-artigo-2.png" alt="Avatar" ></a>
+       <a href="videos/video2.html"><img src="videos/thumb-video-2.png" alt="Avatar" ></a>              
                    
 
-      <a href="artigo3.html"><img src="artigos/thumb-artigo-3.png" alt="Avatar" style="width:100%"></a>              
-      <a href="videos/video3.html"><img src="videos/thumb-video-3.png" alt="Avatar" style="width:100%"></a>              
+      <a href="artigo3.html"><img src="artigos/thumb-artigo-3.png" alt="Avatar"></a>              
+      <a href="videos/video3.html"><img src="videos/thumb-video-3.png" alt="Avatar"></a>              
             
     </div>
   </div>
@@ -72,14 +45,19 @@
     <div class="push"></div>
 
     <footer>
-        <div>
-            <img src="ITS-Logos">
+        <div class="ctn">
+            <div>
+                <img src="ITS_Logos.png">
 
-        </div>
-        <div>
-            <p>contatos</p>
-            <a href="mailto:its@itsrio.org" style="text-decoration: none; color: black;">its@itsrio.org</a> |
-            <a href="mailto:imprensa@itsrio.org" style="text-decoration: none; color: black;">imprensa@itsrio.org</a>
+            </div>
+            <div class="ctnflex">
+                <div>
+                    <p>contatos</p>
+                    <a href="mailto:its@itsrio.org" class="op1">its@itsrio.org </a> |
+                    <a href="mailto:imprensa@itsrio.org" class="op2">imprensa@itsrio.org</a>
+                </div>
+            </div>
+            <div class="titulo">2021 | R. Da Assembléia, 10, 40º andar, sala 4011 — Centro, RJ | whatsapp: (21) 96574-4138</div>
         </div>
     </footer>
 </body>
