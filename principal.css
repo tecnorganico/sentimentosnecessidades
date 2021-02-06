@@ -45,7 +45,7 @@ footer {
     color: white;
     text-align: center;
     align-items: center;
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -66,7 +66,7 @@ footer {
 .ctnflex {
     /*background-color: red;*/
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     float: right;
     position: relative;
@@ -90,3 +90,20 @@ footer {
 .titulo {
     margin-top: 60px;
 }
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    margin: 30px 0px;
+    text-align: center;
+}
+
+    .video-responsive iframe {
+        left: 0;
+        top: 0;
+        height: 70%;
+        width: 70%;
+        position: absolute;
+    }

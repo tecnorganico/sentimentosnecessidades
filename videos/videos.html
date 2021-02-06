@@ -11,119 +11,122 @@
     <title>Vídeos</title>
 
     <!-- Endereço para a página de estilos  -->
-    <link rel="stylesheet" href="./principal.css">
-    <style type="text/css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" type="text/css" href="../principal.css">
+    <!--
+      <style type="text/css">
 
-        .topo a {
-            border: 1px solid #707070;
-            padding: 10px 30px;
-            margin: 16px 0;
-            text-decoration: none;
-            color: #343434;
-        }
+          .topo a {
+              border: 1px solid #707070;
+              padding: 10px 30px;
+              margin: 16px 0;
+              text-decoration: none;
+              color: #343434;
+          }
 
-        .descricao a {
-            padding: 10px 30px;
-            border: 1px solid #707070;
-            height: 75px;
-        }
+          .descricao a {
+              padding: 10px 30px;
+              border: 1px solid #707070;
+              height: 75px;
+          }
 
-        .topo p {
-            margin-bottom: 30px;
-        }
+          .topo p {
+              margin-bottom: 30px;
+          }
 
-        .azul {
-            padding: 10px 30px;
-            border: 1px solid #707070;
-            background-color: transparent;
-        }
+          .azul {
+              padding: 10px 30px;
+              border: 1px solid #707070;
+              background-color: transparent;
+          }
 
-            .azul:hover {
-                padding: 10px 30px;
-                border: 1px solid #707070;
-                color: white;
-                background-color: #0059c3;
-                transition: 0.4s ease-in-out;
-            }
+              .azul:hover {
+                  padding: 10px 30px;
+                  border: 1px solid #707070;
+                  color: white;
+                  background-color: #0059c3;
+                  transition: 0.4s ease-in-out;
+              }
 
-        .laranja {
-            border: 1px solid #707070;
-            background-color: transparent;
-        }
+          .laranja {
+              border: 1px solid #707070;
+              background-color: transparent;
+          }
 
 
-            .laranja:hover {
-                padding: 10px 30px;
-                border: 1px solid #707070;
-                background-color: #FC7F23;
-                color: white;
-                transition: 0.4s ease-in-out;
-                background-color: #FC7F23;
-            }
+              .laranja:hover {
+                  padding: 10px 30px;
+                  border: 1px solid #707070;
+                  background-color: #FC7F23;
+                  color: white;
+                  transition: 0.4s ease-in-out;
+                  background-color: #FC7F23;
+              }
 
-        .cartas-container {
-            /* background-color: black; */
-            width: 100%;
-            min-height: 100%; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
-            margin-bottom: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
-            font-size: 1.2em;
-        }
+          .cartas-container {
+              /* background-color: black; */
+              width: 100%;
+              min-height: 100%; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
+              margin-bottom: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
+              font-size: 1.2em;
+          }
 
-        .cartas {
-            /* background-color: red; */
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 16px 0;
-        }
+          .cartas {
+              /* background-color: red; */
+              display: flex;
+              justify-content: center;
+              flex-wrap: wrap;
+              padding: 16px 0;
+          }
 
-        .cartas-img {
-            width: 500px;
-            height: 500px;
-            border-radius: 16px;
-            box-shadow: 4px 4px 16px 8px #000000;
-            margin: 8px auto;
-        }
+          .cartas-img {
+              width: 500px;
+              height: 500px;
+              border-radius: 16px;
+              box-shadow: 4px 4px 16px 8px #000000;
+              margin: 8px auto;
+          }
 
-        .cartas img:hover {
-            opacity: 0.98;
-            transform: scale(1.02);
-            transition: all 0.2s ease-in, all 0.2s ease-out;
-        }
+          .cartas img:hover {
+              opacity: 0.98;
+              transform: scale(1.02);
+              transition: all 0.2s ease-in, all 0.2s ease-out;
+          }
 
-        .cartas p {
-            width: 300px;
-        }
+          .cartas p {
+              width: 300px;
+          }
 
-        .cartas h2 {
-            font-weight: bolder;
-        }
+          .cartas h2 {
+              font-weight: bolder;
+          }
 
-        .cartas a {
-            margin-top: 50px;
-            padding: 10px;
-            font-weight: bolder;
-            text-decoration-line: underline;
-            transition: font-weight, text-decoration-style 1s ease-in-out;
-        }
+          .cartas a {
+              margin-top: 50px;
+              padding: 10px;
+              font-weight: bolder;
+              text-decoration-line: underline;
+              transition: font-weight, text-decoration-style 1s ease-in-out;
+          }
 
-            .cartas a:hover {
-                transition: font-weight, text-decoration-style 1s ease-in-out;
-                font-weight: lighter;
-                text-decoration-line: overline;
-            }
-  </style>
+              .cartas a:hover {
+                  transition: font-weight, text-decoration-style 1s ease-in-out;
+                  font-weight: lighter;
+                  text-decoration-line: overline;
+              }
+    </style>-->
 </head>
 
 <body>
   <header class="topo" >
-    <a href="../index.html"><img src="../logo.png"></a>
+    <a href="../index.html" style="border:transparent;"><img src="../logo.png"></a>
     <div id="descricao">
-      <p>Acervo de conteúdo com foco em Direitos Autorais organizado pelo ITS Rio. Com a análise dos casos, vamos conseguir entender os elementos fundamentais dos direitos autorais, como quem é autor, que direitos um autor tem, como esses direitos circulam por meio de contratos e em que medida podemos usar obras de outras pessoas sem pedir autorização.</p>
+      <p align=justify>Acervo de conteúdo com foco em Direitos Autorais organizado pelo ITS Rio. Com a análise dos casos, vamos conseguir entender os elementos fundamentais dos direitos autorais, como quem é autor, que direitos um autor tem, como esses direitos circulam por meio de contratos e em que medida podemos usar obras de outras pessoas sem pedir autorização.</p>
       <nav>
-        <a id="azul" href="../artigos/artigos.html">Artigos</a> 
-        <a id="laranja" href="../videos/videos.html">Vídeos</a>
+          <a id="azul" style="background-color: #0059c3;color: white;" href="../artigos/artigos.html">Artigos</a>
+          <a id="laranja" style="background-color: transparent; color: #343434!important;" href="../videos/videos.html">Vídeos</a>
       </nav> 
+        
     </div>
   </header>
   <div class="cartas-container">
@@ -137,8 +140,20 @@
   </div>
   <div class="push"></div>
   <footer>
-    <h2>Volte quando quiser. Se quiser e puder, compartilhe com suas queridas e queridos.</h2>
-    Feito com jeitinho pela InfroCria, uma obra Akangatu.
+      <div class="ctn">
+          <div>
+              <a href="https://itsrio.org/pt/home/"><img src="ITS_Logos.png"></a>
+
+          </div>
+          <div class="ctnflex">
+              <div>
+                  <p>contatos</p>
+                  <a href="mailto:its@itsrio.org" class="op1">its@itsrio.org </a> |
+                  <a href="mailto:imprensa@itsrio.org" class="op2">imprensa@itsrio.org</a>
+              </div>
+          </div>
+          <div class="titulo">2021 | R. Da Assembléia, 10, 40º andar, sala 4011 — Centro, RJ | whatsapp: (21) 96574-4138</div>
+      </div>
   </footer>
 
 </body>
