@@ -19,6 +19,8 @@
 
 .topo p {
     margin-bottom: 30px;
+    margin-right: 12%;
+    margin-left: 8%;
 }
 
 .azul {
@@ -104,3 +106,7 @@
         font-weight: lighter;
         text-decoration-line: overline;
     }
+
+video-responsive {
+    margin:100px;
+}
