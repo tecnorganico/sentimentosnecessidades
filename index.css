@@ -21,6 +21,11 @@ html, body {
   padding: 16px;
   font-size: 1em;
 }
+.topo img:hover {
+  opacity: 0.98;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out, all 0.2s ease-out;
+}
 .topo img {
   /* background-color: orange; */
   width: 244px;
@@ -35,15 +40,52 @@ html, body {
   transition: font-weight, text-decoration-style 2s ease-in-out;
 }
 
-.topo a:hover {
+.topo-a:hover {
   background: rgba(255, 255, 0, 0.459);
 }
 
+/* Estiliza apenas os itens da página inicial */
+.cartas-container-index {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 32px;
+}
+.cartas-container-index a {
+  font-weight: bolder;
+  text-decoration: red;
+  text-decoration-line: underline;
+  transition: font-weight, text-decoration-style 2s ease-in-out;
+}
+
+.cartas-index-a:hover {
+  background: rgba(255, 255, 0, 0.459);
+}
+.cartas-index {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+.cartas-index p {
+}
+
+.cartas-img-index {
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 16px;
+  box-shadow: 4px 4px 16px 8px #000000;
+}
+.cartas-index img:hover {
+  opacity: 0.98;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out, all 0.2s ease-out;
+}
+
+/* Cartas das páginas Sentimentos e Necessidades */
+
 .cartas-container {
-  /* background-color: black; */
-  width: 100vw;
+  width: 100%;
   min-height: 100%; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
-  margin-bottom: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
+  margin: 0 auto -16px; /* CSS-Tricks macete para o footer ficar empurrado lá em baixo */
   font-size: 1.2em;
 }
 
@@ -54,10 +96,10 @@ html, body {
   padding: 16px;
 }
 .cartas-img {
+  width: 500px;
   border-radius: 16px;
   box-shadow: 4px 4px 16px 8px #000000;
   margin: 8px auto;
-  
 }
 
 .cartas img:hover {
@@ -66,10 +108,10 @@ html, body {
   transition: all 0.2s ease-in, all 0.2s ease-out;
 }
 
-
+/* 
 .cartas p {
-  width: 500px;
-}
+  width: 400px;
+} */
 .cartas h2 {
   font-weight: bolder;
 }
@@ -85,13 +127,13 @@ html, body {
   text-decoration-line: overline;
 }
 
-/* 
+/* /* 
   Para manter o footer agarrado no fundo
-  independente do tamanho do conteúdo do .cartas-container */
+  independente do tamanho do conteúdo do .cartas-container / .cartas-container-index */
   footer, .push {
     height: 16px;
     text-align: center;
-  }
+  } 
 
 
 @media (max-width: 1126px) { 
@@ -117,6 +159,26 @@ html, body {
     box-shadow: 4px 4px 16px 8px #000000;
   }
   
+  /*  Index mobile  */
+
+  .cartas-container-index {
+    padding: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .cartas-index {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .cartas-index:first-child {
+    margin-bottom: 64px;
+  }
+  .cartas-img-index {
+    width: 328px;
+    border-radius: 16px;
+    box-shadow: 4px 4px 16px 8px #000000;
+  }
   .cartas h2 {
     font-weight: bolder;
   }
