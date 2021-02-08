@@ -1,9 +1,17 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* 
   Trecho para zerar alguns estilos nativos de navegadores diversos  ]
   Também inclui estilos padrões para o projeto
 */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: #ddd;
   text-decoration: none;
 }
@@ -23,7 +31,11 @@ html, body {
 }
 .topo img:hover {
   opacity: 0.98;
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.2s ease-in-out, all 0.2s ease-out;
+  -o-transition: all 0.2s ease-in-out, all 0.2s ease-out;
   transition: all 0.2s ease-in-out, all 0.2s ease-out;
 }
 .topo img {
@@ -35,9 +47,15 @@ html, body {
 
 .topo a {
   font-weight: bolder;
-  text-decoration: red;
-  text-decoration-line: underline;
+  -webkit-text-decoration: red;
+          text-decoration: red;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-transition: font-weight, -webkit-text-decoration-style 2s ease-in-out;
+  transition: font-weight, -webkit-text-decoration-style 2s ease-in-out;
+  -o-transition: font-weight, text-decoration-style 2s ease-in-out;
   transition: font-weight, text-decoration-style 2s ease-in-out;
+  transition: font-weight, text-decoration-style 2s ease-in-out, -webkit-text-decoration-style 2s ease-in-out;
 }
 
 .topo-a:hover {
@@ -46,24 +64,41 @@ html, body {
 
 /* Estiliza apenas os itens da página inicial */
 .cartas-container-index {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin-bottom: 32px;
 }
 .cartas-container-index a {
   font-weight: bolder;
-  text-decoration: red;
-  text-decoration-line: underline;
+  -webkit-text-decoration: red;
+          text-decoration: red;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-transition: font-weight, -webkit-text-decoration-style 2s ease-in-out;
+  transition: font-weight, -webkit-text-decoration-style 2s ease-in-out;
+  -o-transition: font-weight, text-decoration-style 2s ease-in-out;
   transition: font-weight, text-decoration-style 2s ease-in-out;
+  transition: font-weight, text-decoration-style 2s ease-in-out, -webkit-text-decoration-style 2s ease-in-out;
 }
 
 .cartas-index-a:hover {
   background: rgba(255, 255, 0, 0.459);
 }
 .cartas-index {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 500px;
 }
 .cartas-index h2 {
@@ -77,11 +112,16 @@ html, body {
   width: 500px;
   height: 500px;
   border-radius: 16px;
-  box-shadow: 4px 4px 16px 8px #000000;
+  -webkit-box-shadow: 4px 4px 16px 8px #000000;
+          box-shadow: 4px 4px 16px 8px #000000;
 }
 .cartas-index img:hover {
   opacity: 0.98;
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.2s ease-in-out, all 0.2s ease-out;
+  -o-transition: all 0.2s ease-in-out, all 0.2s ease-out;
   transition: all 0.2s ease-in-out, all 0.2s ease-out;
 }
 
@@ -96,20 +136,28 @@ html, body {
 
 .cartas {
     /* background-color: red; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 16px;
 }
 .cartas-img {
   width: 500px;
   border-radius: 16px;
-  box-shadow: 4px 4px 16px 8px #000000;
+  -webkit-box-shadow: 4px 4px 16px 8px #000000;
+          box-shadow: 4px 4px 16px 8px #000000;
   margin: 8px auto;
 }
 
 .cartas img:hover {
   opacity: 0.98;
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: all 0.2s ease-in, all 0.2s ease-out;
+  -o-transition: all 0.2s ease-in, all 0.2s ease-out;
   transition: all 0.2s ease-in, all 0.2s ease-out;
 }
 
@@ -118,14 +166,25 @@ html, body {
 }
 .cartas a {
   font-weight: bolder;
-  text-decoration: red;
-  text-decoration-line: underline;
+  -webkit-text-decoration: red;
+          text-decoration: red;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-transition: font-weight, -webkit-text-decoration-style 2s ease-in-out;
+  transition: font-weight, -webkit-text-decoration-style 2s ease-in-out;
+  -o-transition: font-weight, text-decoration-style 2s ease-in-out;
   transition: font-weight, text-decoration-style 2s ease-in-out;
+  transition: font-weight, text-decoration-style 2s ease-in-out, -webkit-text-decoration-style 2s ease-in-out;
 }
 .cartas a:hover {
+  -webkit-transition: font-weight, -webkit-text-decoration-style 1s ease-in-out;
+  transition: font-weight, -webkit-text-decoration-style 1s ease-in-out;
+  -o-transition: font-weight, text-decoration-style 1s ease-in-out;
   transition: font-weight, text-decoration-style 1s ease-in-out;
+  transition: font-weight, text-decoration-style 1s ease-in-out, -webkit-text-decoration-style 1s ease-in-out;
   font-weight: lighter;
-  text-decoration-line: overline;
+  -webkit-text-decoration-line: overline;
+          text-decoration-line: overline;
 }
 
 /* /* 
@@ -148,9 +207,13 @@ html, body {
   
   .cartas {
     /* background-color: black; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin: 0 auto;
     max-width: 576px;
 
@@ -159,7 +222,8 @@ html, body {
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    box-shadow: 4px 4px 16px 8px #000000;
+    -webkit-box-shadow: 4px 4px 16px 8px #000000;
+            box-shadow: 4px 4px 16px 8px #000000;
   }
   
   /*  Index mobile  */
@@ -167,11 +231,17 @@ html, body {
   .cartas-container-index {
     padding: 16px;
     margin-bottom: 16px;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .cartas-index {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
   }
   .cartas-index:first-child {
@@ -181,7 +251,8 @@ html, body {
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    box-shadow: 4px 4px 16px 8px #000000;
+    -webkit-box-shadow: 4px 4px 16px 8px #000000;
+            box-shadow: 4px 4px 16px 8px #000000;
   }
   .cartas h2 {
     font-weight: bolder;
@@ -191,8 +262,10 @@ html, body {
   }
   .cartas a {
     font-weight: bolder;
-    text-decoration: red;
-    text-decoration-line: underline;
+    -webkit-text-decoration: red;
+            text-decoration: red;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
   }
   
 }
