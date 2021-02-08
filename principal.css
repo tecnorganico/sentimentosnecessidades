@@ -39,30 +39,6 @@ html, body {
         padding-bottom: 10px;
     }
 
-footer {
-    width: 100%;
-    height: 40vh;
-    background-color: #707070;
-    color: white;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-    footer a {
-        text-decoration: none;
-        color: white;
-        position: relative;
-    }
-
-    footer img {
-        width: 15%;
-        height: 60%;
-    }
-
-
 .op1 {
     width: 38%;
     font-size: 1.2vw;
@@ -117,3 +93,40 @@ footer {
 .container-video {
     text-align: center;
 }
+.flex-container {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+
+}
+
+    .flex-container > div {
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 8px;
+        font-size: 12px;
+    }
+
+footer {
+    width: 100%;
+    height: 40vh;
+    background-color: #707070;
+    color: white;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    footer a {
+        text-decoration: none;
+        color: white;
+        position: relative;
+    }
+
+    footer img {
+        width: 15%;
+        height: 60%;
+    }
