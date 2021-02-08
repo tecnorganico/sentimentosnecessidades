@@ -63,14 +63,19 @@ html, body {
 .cartas-index {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 500px;
 }
-.cartas-index p {
+.cartas-index h2 {
+  margin-bottom: 0;
 }
-
+.cartas-index p {
+  width: 100%;
+  text-align: center;
+}
 .cartas-img-index {
-  max-width: 500px;
-  max-height: 500px;
+  width: 500px;
+  height: 500px;
   border-radius: 16px;
   box-shadow: 4px 4px 16px 8px #000000;
 }
@@ -108,10 +113,6 @@ html, body {
   transition: all 0.2s ease-in, all 0.2s ease-out;
 }
 
-/* 
-.cartas p {
-  width: 400px;
-} */
 .cartas h2 {
   font-weight: bolder;
 }
@@ -134,7 +135,9 @@ html, body {
     height: 16px;
     text-align: center;
   } 
-
+  footer {
+    padding: 0 0 64px 0;
+  }
 
 @media (max-width: 1126px) { 
   .cartas-container {
@@ -175,7 +178,8 @@ html, body {
     margin-bottom: 64px;
   }
   .cartas-img-index {
-    width: 328px;
+    width: 100%;
+    height: 100%;
     border-radius: 16px;
     box-shadow: 4px 4px 16px 8px #000000;
   }
