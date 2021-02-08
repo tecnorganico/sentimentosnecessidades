@@ -8,7 +8,7 @@
     padding: 10px 30px;
     margin: 16px 0;
     text-decoration: none;
-    color: white;
+    color: #343434;
 }
 
 .descricao a {
@@ -24,35 +24,42 @@
 }
 
 .azul {
-    padding: 10px 30px;
-    border: 1px solid #707070;
-    color: white;
-    background-color: #0059c3;
-    }
+    color: #343434;
+    background-color: transparent;
+}
 
     .azul:hover {
         padding: 10px 30px;
         border: 1px solid #707070;
-        background-color: transparent;
+        background-color: #0059c3;
+        color: white;
         transition: 0.4s ease-in-out;
-        color: #343434;
     }
 
 .laranja {
+    background-color: transparent;
     padding: 10px 30px;
     border: 1px solid #707070;
-    background-color: #FC7F23;
-    color: white;
-
+    background-color: transparent;
+    color: #343434;
 }
 
-
     .laranja:hover {
-        border: 1px solid #707070;
-        background-color: transparent;
+        background-color: #FC7F23;
         transition: 0.4s ease-in-out;
-        background-color: transparent;
-        color: #343434;
+        color: white;
+    }
+
+.todos {
+    border: 1px solid #707070;
+    background-color: transparent;
+    color: #343434;
+}
+
+    .todos:hover {
+        background-color: mediumpurple;
+        color: white;
+        transition: 0.4s ease-in-out;
     }
 
 .cartas-container {
