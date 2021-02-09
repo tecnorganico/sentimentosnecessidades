@@ -13,31 +13,50 @@ html, body {
     opacity: 1;
 }
 
-.descricao {
-    text-align: left;
-    font: normal 24px Titillium Web;
-    letter-spacing: 0px;
-    color: #343434;
-    opacity: 1;
-}
-
 .topo {
     /* background-color: red; */
-    text-align: left;
     padding: 16px;
     font-size: 1em;
-    text-align: left;
     font: normal 24px/36px Titillium Web;
     color: #343434;
+    display: flex;   
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 1220px;
 }
 
     .topo img {
         /* background-color: orange; */
         width: 30%;
         height: 15%;
-        margin: auto 6%;
-        padding-bottom: 10px;
     }
+    .topo p {
+        margin-bottom: 30px;
+    }
+
+    
+
+.descricao {
+    font: normal 24px Titillium Web;
+    letter-spacing: 0px;
+    color: #343434;
+    opacity: 1;
+}
+
+.descricao a {
+    padding: 10px 30px;
+    height: 75px;
+}
+
+nav .purple {
+    background-color: mediumpurple; 
+    color: white !important;
+}
+
+nav .purple a:active { /* com o pseudoelemento :active, quando esse link for correspondente a página atual, esse estilo será aplicado */
+    background-color: mediumpurple; 
+}
 
 .op1 {
     width: 38%;
@@ -130,3 +149,15 @@ footer {
         width: 15%;
         height: 60%;
     }
+
+@media (min-width:320px) { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+    .topo img {
+        /* background-color: orange; */
+        width: 320px;
+        height: 20%;
+    }
+    .topo {
+        /* background-color: red; */
+    }
+
+}

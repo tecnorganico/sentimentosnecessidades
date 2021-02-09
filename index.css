@@ -1,28 +1,17 @@
-/* 
-  Trecho para zerar alguns estilos nativos de navegadores diversos  ]
-  Também inclui estilos padrões para o projeto
-  */
 
-.topo a {
+.todos {
     border: 1px solid #707070;
-    padding: 10px 30px;
-    margin: 16px 0;
-    text-decoration: none;
+    background-color: transparent;
     color: #343434;
 }
 
-.descricao a {
-    padding: 10px 30px;
+nav a {
     border: 1px solid #707070;
-    height: 75px;
+    padding: 10px 30px;
+    margin: 16px 0.4%;
+    text-decoration: none;
+    color: #343434;
 }
-
-.topo p {
-    margin-bottom: 30px;
-    margin-right: 12%;
-    margin-left: 8%;
-}
-
 .azul {
     color: #343434;
     background-color: transparent;
@@ -35,7 +24,10 @@
         color: white;
         transition: 0.4s ease-in-out;
     }
-
+    .azul-ativo {
+        background-color: #0059c3; 
+        color: white !important; 
+    }
 .laranja {
     background-color: transparent;
     padding: 10px 30px;
@@ -49,12 +41,10 @@
         transition: 0.4s ease-in-out;
         color: white;
     }
-
-.todos {
-    border: 1px solid #707070;
-    background-color: transparent;
-    color: #343434;
-}
+    .laranja-ativo {
+        background-color: #FC7F23;
+        color: white !important;
+    }
 
     .todos:hover {
         background-color: mediumpurple;
