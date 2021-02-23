@@ -69,8 +69,8 @@ html, body {
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  margin-bottom: 32px;
+          justify-content: center;
+   max-width: 100%;
 }
 .cartas-container-index a {
   font-weight: bolder;
@@ -100,6 +100,7 @@ html, body {
       -ms-flex-align: center;
           align-items: center;
   width: 500px;
+  margin: 0 56px;
 }
 .cartas-index h2 {
   margin-bottom: 0;
