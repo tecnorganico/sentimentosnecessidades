@@ -1,0 +1,680 @@
+<!doctype html>
+<html class="export" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Filter &amp; sort magical layouts">
+
+  <title>Isotope &#xB7; Sorting</title>
+
+    <!-- Isotope does not require any CSS files -->
+    <link rel="stylesheet" href="css/isotope-docs.css?6" media="screen">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@metafizzyco">
+  <meta name="twitter:url" content="https://isotope.metafizzy.co/sorting.html">
+  <meta name="twitter:title" content="Isotope Sorting">
+  <meta name="twitter:description" content="Filter &amp; sort magical layouts">
+
+</head>
+<body class="page--sorting">
+
+
+  <div class="nav">
+    <h1 class="nav__title"><a href=".">Isotope</a></h1>
+  
+    <ol class="site-nav">
+      <li class="site-nav__item site-nav__item--filtering">
+        <a class="site-nav__item__link" href="filtering.html">Filtering</a></li>
+      <li class="site-nav__item site-nav__item--sorting">
+        <a class="site-nav__item__link" href="sorting.html">Sorting</a></li>
+      <li class="site-nav__item site-nav__item--layout ">
+        <a class="site-nav__item__link" href="layout.html">Layout</a>
+      </li>
+      <li class="site-nav__item site-nav__item--layout-modes sub-nav-parent">
+        <a class="site-nav__item__link" href="layout-modes.html">Layout modes</a>
+        <ul class="sub-nav">
+            <li class="sub-nav__item sub-nav__item--masonry">
+              <a class="sub-nav__item__link" href="layout-modes/masonry.html">masonry</a></li>
+            <li class="sub-nav__item sub-nav__item--fitrows">
+              <a class="sub-nav__item__link" href="layout-modes/fitrows.html">fitRows</a></li>
+            <li class="sub-nav__item sub-nav__item--vertical">
+              <a class="sub-nav__item__link" href="layout-modes/vertical.html">vertical</a></li>
+            <li class="sub-nav__item sub-nav__item--packery">
+              <a class="sub-nav__item__link" href="layout-modes/packery.html">packery</a></li>
+            <li class="sub-nav__item sub-nav__item--cellsbyrow">
+              <a class="sub-nav__item__link" href="layout-modes/cellsbyrow.html">cellsByRow</a></li>
+            <li class="sub-nav__item sub-nav__item--masonryhorizontal">
+              <a class="sub-nav__item__link" href="layout-modes/masonryhorizontal.html">masonryHorizontal</a></li>
+            <li class="sub-nav__item sub-nav__item--fitcolumns">
+              <a class="sub-nav__item__link" href="layout-modes/fitcolumns.html">fitColumns</a></li>
+            <li class="sub-nav__item sub-nav__item--cellsbycolumn">
+              <a class="sub-nav__item__link" href="layout-modes/cellsbycolumn.html">cellsByColumn</a></li>
+            <li class="sub-nav__item sub-nav__item--horiz">
+              <a class="sub-nav__item__link" href="layout-modes/horiz.html">horiz</a></li>
+        </ul>
+      </li>
+      <li class="site-nav__item site-nav__item--options">
+        <a class="site-nav__item__link" href="options.html">Options</a></li>
+      <li class="site-nav__item site-nav__item--methods">
+        <a class="site-nav__item__link" href="methods.html">Methods</a></li>
+      <li class="site-nav__item site-nav__item--events">
+        <a class="site-nav__item__link" href="events.html">Events</a></li>
+      <li class="site-nav__item site-nav__item--extras">
+        <a class="site-nav__item__link" href="extras.html">Extras</a></li>
+      <li class="site-nav__item site-nav__item--license">
+        <a class="site-nav__item__link" href="license.html">License</a></li>
+      <li class="site-nav__item site-nav__item--faq">
+        <a class="site-nav__item__link" href="faq.html">FAQ</a></li>
+    </ol>
+  
+    <ul class="page-nav" data-js="page-nav">
+<li class="page-nav__item page-nav__item--h2"><a href="#html">HTML</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#getsortdata">getSortData</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#getsortdata-strings">getSortData strings</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#getsortdata-functions">getSortData functions</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#sortby">sortBy</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#multiple-sortby">Multiple sortBy</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#sortascending">sortAscending</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#updatesortdata">updateSortData</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#ui">UI</a></li>
+</ul>
+  </div>
+
+
+  <div id="content" class="main">
+    <div class="container">
+        <h1>Sorting</h1>
+
+
+<p>Isotope can rearrange the order of item elements based on their data.</p>
+
+<div class="big-demo go-wide" data-js="sorting-demo">
+
+  <div class="button-group sort-by-button-group js-radio-button-group">
+    <button class="button is-checked" data-sort-by="original-order">original order</button>
+    <button class="button" data-sort-by="name">name</button>
+    <button class="button" data-sort-by="symbol">symbol</button>
+    <button class="button" data-sort-by="number">number</button>
+    <button class="button" data-sort-by="weight">weight</button>
+    <button class="button" data-sort-by="category">category</button>
+  </div>
+
+  <pre class="code-display"><code>$grid.isotope({...})</code></pre>
+
+  <div class="grid">
+      <div class="element-item transition metal " data-category="transition">
+        <h5 class="name">Mercury</h5>
+        <p class="symbol">Hg</p>
+        <p class="number">80</p>
+        <p class="weight">200.59</p>
+      </div>
+      <div class="element-item metalloid " data-category="metalloid">
+        <h5 class="name">Tellurium</h5>
+        <p class="symbol">Te</p>
+        <p class="number">52</p>
+        <p class="weight">127.6</p>
+      </div>
+      <div class="element-item post-transition metal " data-category="post-transition">
+        <h5 class="name">Bismuth</h5>
+        <p class="symbol">Bi</p>
+        <p class="number">83</p>
+        <p class="weight">208.980</p>
+      </div>
+      <div class="element-item post-transition metal " data-category="post-transition">
+        <h5 class="name">Lead</h5>
+        <p class="symbol">Pb</p>
+        <p class="number">82</p>
+        <p class="weight">207.2</p>
+      </div>
+      <div class="element-item transition metal " data-category="transition">
+        <h5 class="name">Gold</h5>
+        <p class="symbol">Au</p>
+        <p class="number">79</p>
+        <p class="weight">196.967</p>
+      </div>
+      <div class="element-item alkali metal " data-category="alkali">
+        <h5 class="name">Potassium</h5>
+        <p class="symbol">K</p>
+        <p class="number">19</p>
+        <p class="weight">39.0983</p>
+      </div>
+      <div class="element-item alkali metal " data-category="alkali">
+        <h5 class="name">Sodium</h5>
+        <p class="symbol">Na</p>
+        <p class="number">11</p>
+        <p class="weight">22.99</p>
+      </div>
+      <div class="element-item transition metal " data-category="transition">
+        <h5 class="name">Cadmium</h5>
+        <p class="symbol">Cd</p>
+        <p class="number">48</p>
+        <p class="weight">112.411</p>
+      </div>
+      <div class="element-item alkaline-earth metal " data-category="alkaline-earth">
+        <h5 class="name">Calcium</h5>
+        <p class="symbol">Ca</p>
+        <p class="number">20</p>
+        <p class="weight">40.078</p>
+      </div>
+      <div class="element-item transition metal " data-category="transition">
+        <h5 class="name">Rhenium</h5>
+        <p class="symbol">Re</p>
+        <p class="number">75</p>
+        <p class="weight">186.207</p>
+      </div>
+      <div class="element-item post-transition metal " data-category="post-transition">
+        <h5 class="name">Thallium</h5>
+        <p class="symbol">Tl</p>
+        <p class="number">81</p>
+        <p class="weight">204.383</p>
+      </div>
+      <div class="element-item metalloid " data-category="metalloid">
+        <h5 class="name">Antimony</h5>
+        <p class="symbol">Sb</p>
+        <p class="number">51</p>
+        <p class="weight">121.76</p>
+      </div>
+      <div class="element-item transition metal " data-category="transition">
+        <h5 class="name">Cobalt</h5>
+        <p class="symbol">Co</p>
+        <p class="number">27</p>
+        <p class="weight">58.933</p>
+      </div>
+      <div class="element-item lanthanoid metal inner-transition " data-category="lanthanoid">
+        <h5 class="name">Ytterbium</h5>
+        <p class="symbol">Yb</p>
+        <p class="number">70</p>
+        <p class="weight">173.054</p>
+      </div>
+      <div class="element-item noble-gas nonmetal " data-category="noble-gas">
+        <h5 class="name">Argon</h5>
+        <p class="symbol">Ar</p>
+        <p class="number">18</p>
+        <p class="weight">39.948</p>
+      </div>
+      <div class="element-item diatomic nonmetal " data-category="diatomic">
+        <h5 class="name">Nitrogen</h5>
+        <p class="symbol">N</p>
+        <p class="number">7</p>
+        <p class="weight">14.007</p>
+      </div>
+      <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+        <h5 class="name">Uranium</h5>
+        <p class="symbol">U</p>
+        <p class="number">92</p>
+        <p class="weight">238.029</p>
+      </div>
+      <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+        <h5 class="name">Plutonium</h5>
+        <p class="symbol">Pu</p>
+        <p class="number">94</p>
+        <p class="weight">(244)</p>
+      </div>
+  </div>
+
+  <p class="edit-demo">
+      <a href="https://codepen.io/desandro/pen/lzCqe">Edit this demo</a>
+      or <a href="https://codepen.io/desandro/pen/Wwabpr">vanilla JS demo</a> on CodePen
+  </p>
+</div>
+
+
+<h2 id="html">HTML</h2>
+
+<p>All the data used for sorting can be set in the HTML. For the example at the top of the page, each item element has several data points that can be used for sorting.</p>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid&quot;</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;element-item transition metal&quot;</span> <span class="attr">data-category</span>=<span class="string">&quot;transition&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;number&quot;</span>&gt;</span>79<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">&quot;symbol&quot;</span>&gt;</span>Au<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Gold<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;weight&quot;</span>&gt;</span>196.966569<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;element-item metalloid&quot;</span> <span class="attr">data-category</span>=<span class="string">&quot;metalloid&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;number&quot;</span>&gt;</span>51<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">&quot;symbol&quot;</span>&gt;</span>Sb<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Antimony<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;weight&quot;</span>&gt;</span>121.76<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+
+
+<h2 id="getsortdata">getSortData</h2>
+
+<p>Isotope reads data from HTML with the <code>getSortData</code> option. <code>getSortData</code> is set with an object. The object&#x2019;s keys are keywords used to sort by. Object values are either a shortcut string or function to retrieve the data.</p>
+
+<pre><code class="js"><span class="keyword">var</span> <span class="jquery_var">$grid</span> = $(<span class="string">&apos;.grid&apos;</span>).isotope({
+  <span class="attr">getSortData</span>: {
+    <span class="attr">name</span>: <span class="string">&apos;.name&apos;</span>, <span class="comment">// text from querySelector</span>
+    category: <span class="string">&apos;[data-category]&apos;</span>, <span class="comment">// value of attribute</span>
+    weight: <span class="function"><span class="keyword">function</span>(<span class="params"> itemElem </span>) </span>{ <span class="comment">// function</span>
+      <span class="keyword">var</span> weight = $( itemElem ).find(<span class="string">&apos;.weight&apos;</span>).text();
+      <span class="keyword">return</span> <span class="built_in">parseFloat</span>( weight.replace( <span class="regexp">/[\(\)]/g</span>, <span class="string">&apos;&apos;</span>) );
+    }
+  }
+});
+</code></pre>
+
+
+<h3 id="getsortdata-strings">getSortData strings</h3>
+
+<p>When a <code>getSortData</code> value is set to a string, the string will be used as a query selector to get the text of a child element for each item element by default.</p>
+
+<pre><code class="js">name: <span class="string">&apos;.name&apos;</span>, <span class="comment">// use text of .name element</span>
+symbol: <span class="string">&apos;.symbol&apos;</span> <span class="comment">// use text of .symbol</span>
+</code></pre>
+
+<p>A string wrapped in brackets, like <code><span class="string">&apos;[attribute]&apos;</span></code>, will be used to get the value of an attribute.</p>
+
+<pre><code class="js"><span class="comment">// use value of data-category attribute</span>
+category: <span class="string">&apos;[data-category]&apos;</span>
+</code></pre>
+
+<p>Data values can be parsed into numbers by adding parser keywords to the shortcut string.</p>
+
+<pre><code class="js"><span class="comment">// parse text of .number as an integer</span>
+number: <span class="string">&apos;.number parseInt&apos;</span>,
+<span class="comment">// parse text of .weight as a float</span>
+weight: <span class="string">&apos;.weight parseFloat&apos;</span>
+</code></pre>
+
+
+<h3 id="getsortdata-functions">getSortData functions</h3>
+
+<p><code>getSortData</code> values can be set to a function. This function is used on each item element to get data. The function provides one parameter <code>itemElem</code>, which is the item element. The function needs to return the data point.</p>
+
+<pre><code class="js">weight: <span class="function"><span class="keyword">function</span>(<span class="params"> itemElem </span>) </span>{
+  <span class="comment">// get text of .weight element</span>
+  <span class="keyword">var</span> weight = $( itemElem ).find(<span class="string">&apos;.weight&apos;</span>).text();
+  <span class="comment">// replace parens (), and parse as float</span>
+  <span class="keyword">return</span> <span class="built_in">parseFloat</span>( weight.replace( <span class="regexp">/[\(\)]/g</span>, <span class="string">&apos;&apos;</span>) );
+}
+</code></pre>
+
+
+<h2 id="sortby">sortBy</h2>
+
+<p>For every property set in <code>getSortData</code>, Isotope can use it for sorting with the <code>sortBy</code> option. The value of <code>sortBy</code> needs to match a key in <code>getSortData</code>. With the properties above, <code>sortBy</code> can be set to
+  <code><span class="string">&apos;name&apos;</span></code>,
+  <code><span class="string">&apos;symbol&apos;</span></code>,
+  <code><span class="string">&apos;number&apos;</span></code>,
+  <code><span class="string">&apos;weight&apos;</span></code>, and
+  <code><span class="string">&apos;category&apos;</span></code>.
+</p>
+
+<pre><code class="js"><span class="jquery_var">$grid</span>.isotope({ <span class="attr">sortBy</span> : <span class="string">&apos;symbol&apos;</span> });
+</code></pre>
+
+<p>Two additional <code>sortBy</code> options are built in.</p>
+
+<pre><code class="js"><span class="jquery_var">$grid</span>.isotope({ <span class="attr">sortBy</span> : <span class="string">&apos;original-order&apos;</span> });
+<span class="comment">// original order of the item elements</span>
+
+<span class="jquery_var">$grid</span>.isotope({ <span class="attr">sortBy</span> : <span class="string">&apos;random&apos;</span> });
+<span class="comment">// random order</span>
+</code></pre>
+
+
+<h3 id="multiple-sortby">Multiple sortBy</h3>
+
+<p>To sort by multiple properties, you can set <code>sortBy</code> to an array. For example, <code>sortBy: [ <span class="string">&apos;color&apos;</span>, <span class="string">&apos;number&apos;</span> ]</code> will sort items by color, <em>then</em> by number.</p>
+
+<div class="duo example go-wide">
+  <div class="duo__cell example__code">
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid&quot;</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item&quot;</span> <span class="attr">data-color</span>=<span class="string">&quot;yellow&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;number&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item&quot;</span> <span class="attr">data-color</span>=<span class="string">&quot;blue&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;number&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  ...
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+
+<pre><code class="js"><span class="keyword">var</span> <span class="jquery_var">$grid</span> = $(<span class="string">&apos;.grid&apos;</span>).isotope({
+  <span class="attr">getSortData</span>: {
+    <span class="attr">color</span>: <span class="string">&apos;[data-color]&apos;</span>,
+    <span class="attr">number</span>: <span class="string">&apos;.number parseInt&apos;</span>
+  },
+  <span class="comment">// sort by color then number</span>
+  sortBy: [ <span class="string">&apos;color&apos;</span>, <span class="string">&apos;number&apos;</span> ]
+});
+</code></pre>
+  </div>
+
+  <div class="duo__cell example__demo" data-js="multiple-sort-by">
+  
+    <div class="button-group js-radio-button-group">
+      <button class="button is-checked" data-sort-by="color,number">color, number</button>
+      <button class="button" data-sort-by="number,color">number, color</button>
+    </div>
+  
+    <div class="grid">
+      <div class="grid-multi-item" data-color="yellow">
+        <p class="number">3</p>
+      </div>
+      <div class="grid-multi-item" data-color="blue">
+        <p class="number">2</p>
+      </div>
+      <div class="grid-multi-item" data-color="blue">
+        <p class="number">1</p>
+      </div>
+      <div class="grid-multi-item" data-color="yellow">
+        <p class="number">1</p>
+      </div>
+      <div class="grid-multi-item" data-color="yellow">
+        <p class="number">2</p>
+      </div>
+      <div class="grid-multi-item" data-color="blue">
+        <p class="number">3</p>
+      </div>
+      <div class="grid-multi-item" data-color="yellow">
+        <p class="number">2</p>
+      </div>
+      <div class="grid-multi-item" data-color="red">
+        <p class="number">2</p>
+      </div>
+      <div class="grid-multi-item" data-color="red">
+        <p class="number">3</p>
+      </div>
+    </div>
+  
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/sxAJL">Edit this demo on CodePen</a>
+    </p>
+  </div>
+
+</div>
+
+
+<h2 id="sortascending">sortAscending</h2>
+
+<p>By default, Isotope sorts ascendingly: A, B, C and 1, 2, 3. To sort descendingly Z, Y, X, and 9, 8, 7, set <code>sortAscending: <span class="literal">false</span></code>.</p>
+
+<pre><code class="js"><span class="comment">// sort highest number first</span>
+<span class="jquery_var">$grid</span>.isotope({
+  <span class="attr">sortBy</span>: <span class="string">&apos;number&apos;</span>,
+  <span class="attr">sortAscending</span>: <span class="literal">false</span>
+});
+</code></pre>
+
+<p><code>sortAscending</code> can also be set with an object, so that you can set ascending order for each <code>sortBy</code> value.</p>
+
+<pre><code class="js"><span class="jquery_var">$grid</span>.isotope({
+  <span class="attr">sortAscending</span>: {
+    <span class="attr">name</span>: <span class="literal">true</span>,
+    <span class="attr">weight</span>: <span class="literal">false</span>,
+    <span class="attr">category</span>: <span class="literal">true</span>,
+    <span class="attr">number</span>: <span class="literal">false</span>
+  }
+});
+</code></pre>
+
+
+<h2 id="updatesortdata">updateSortData</h2>
+
+<p>To update sort data after a change has been made to item elements, use the <a href="methods.html#updatesortdata"><code>updateSortData</code> method</a>.</p>
+
+<pre><code class="js"><span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;updateSortData&apos;</span>).isotope();
+</code></pre>
+
+
+<h2 id="ui">UI</h2>
+
+<p>Let&#x2019;s use a group of buttons for the UI.</p>
+
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;button-group sort-by-button-group&quot;</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">button</span> <span class="attr">data-sort-by</span>=<span class="string">&quot;original-order&quot;</span>&gt;</span>original order<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">button</span> <span class="attr">data-sort-by</span>=<span class="string">&quot;name&quot;</span>&gt;</span>name<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">button</span> <span class="attr">data-sort-by</span>=<span class="string">&quot;symbol&quot;</span>&gt;</span>symbol<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">button</span> <span class="attr">data-sort-by</span>=<span class="string">&quot;number&quot;</span>&gt;</span>number<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">button</span> <span class="attr">data-sort-by</span>=<span class="string">&quot;weight&quot;</span>&gt;</span>weight<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">button</span> <span class="attr">data-sort-by</span>=<span class="string">&quot;category&quot;</span>&gt;</span>category<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+
+<p>Each button has its <code>sortBy</code> value set in the <code>data-sort-by</code> attribute. In the JS, we can use that value when a button is clicked.</p>
+
+<pre><code class="js"><span class="comment">// init Isotope</span>
+<span class="keyword">var</span> <span class="jquery_var">$grid</span> = <span class="jquery_var">$grid</span>.isotope({
+  <span class="attr">getSortData</span>: {
+    <span class="attr">name</span>: <span class="string">&apos;.name&apos;</span>,
+    <span class="attr">symbol</span>: <span class="string">&apos;.symbol&apos;</span>,
+    <span class="attr">number</span>: <span class="string">&apos;.number parseInt&apos;</span>,
+    <span class="attr">category</span>: <span class="string">&apos;[data-category]&apos;</span>,
+    <span class="attr">weight</span>: <span class="function"><span class="keyword">function</span>(<span class="params"> itemElem </span>) </span>{
+      <span class="keyword">var</span> weight = $( itemElem ).find(<span class="string">&apos;.weight&apos;</span>).text();
+      <span class="keyword">return</span> <span class="built_in">parseFloat</span>( weight.replace( <span class="regexp">/[\(\)]/g</span>, <span class="string">&apos;&apos;</span>) );
+    }
+  }
+});
+
+<span class="comment">// sort items on button click</span>
+$(<span class="string">&apos;.sort-by-button-group&apos;</span>).on( <span class="string">&apos;click&apos;</span>, <span class="string">&apos;button&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="keyword">var</span> sortByValue = $(<span class="keyword">this</span>).attr(<span class="string">&apos;data-sort-by&apos;</span>);
+  <span class="jquery_var">$grid</span>.isotope({ <span class="attr">sortBy</span>: sortByValue });
+});
+</code></pre>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+  
+    <div class="container">
+  
+      <p class="site-footer__copy">Metafizzy makes delightful web plugins &amp; logos</p>
+  
+      <div class="showcase">
+      
+        <ul class="showcase-item-list">
+      
+            <li class="showcase-item">
+              <a class="showcase-item__link" href="https://infinite-scroll.com">
+                <div class="showcase-item__image">
+                    <svg class="infinite-scroll-illo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 520 520" width="200" height="200">
+                      <path class="infinite-scroll-illo__page infinite-scroll-illo__page--back" d="M90,110H10V90c0-22,18-40,40-40h40V110z"/>
+                      <path class="infinite-scroll-illo__page infinite-scroll-illo__page--front1" d="M270,90L270,90c0-22-18-40-40-40h0H50h0c22,0,40,18,40,40v0v0v160h180V90z"/>
+                      <path class="infinite-scroll-illo__page infinite-scroll-illo__page--front2" d="M170,330v-20H90v20v0c0,22,18,40,40,40h0h40V330z"/>
+                      <path class="infinite-scroll-illo__page infinite-scroll-illo__page--back" d="M350,150H210c-22,0-40,18-40,40v140v0c0,22-18,40-40,40h0h220V150z"/>
+                      <path class="infinite-scroll-illo__page infinite-scroll-illo__page--front3" d="M430,470V270H250v160c0,22,18,40,40,40H430z"/>
+                      <path class="infinite-scroll-illo__page infinite-scroll-illo__page--front2" d="M250,190v20h180v-20c0-22-18-40-40-40H210h0C232,150,250,168,250,190L250,190z"/>
+                      <path class="infinite-scroll-illo__page infinite-scroll-illo__page--back" d="M330,410v20v0c0,22-18,40-40,40h0h180c22,0,40-18,40-40v-20H330z"/>
+                    </svg>
+                </div>
+                <div class="showcase-item__text">
+                  <h3 class="showcase-item__title">Infinite Scroll</h3>
+                  <p class="showcase-item__description">Automatically add next page</p>
+                </div>
+              </a>
+            </li>
+      
+            <li class="showcase-item">
+              <a class="showcase-item__link" href="https://flickity.metafizzy.co">
+                <div class="showcase-item__image">
+                    <svg class="flickity-illo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 360 360" width="100" height="100">
+                      <path class="flickity-illo__color1" fill="#19F" d="M300 220L300 220c-11 0-20-9-20-20v-80c0-11 9-20 20-20h0V220z"/>
+                      <path class="flickity-illo__color1" fill="#19F" d="M340 220L340 220c-11 0-20-9-20-20v-80c0-11 9-20 20-20h0V220z"/>
+                      <path class="flickity-illo__color2" fill="#333" d="M320 290V180c0-18-10-35-27-43L240 110v180H320z"/>
+                      <path class="flickity-illo__color3" fill="white" d="M240 300H120c-11 0-20-9-20-20V40c0-11 9-20 20-20h120c11 0 20 9 20 20v240C260 291 251 300 240 300z"/>
+                      <path class="flickity-illo__color4" fill="#ED0" d="M230 260H130c-6 0-10-5-10-10V70c0-6 5-10 10-10h100c6 0 10 5 10 10v180 C240 256 236 260 230 260z"/>
+                      <path class="flickity-illo__color2" fill="#333" d="M260 200h60v81c0 32-26 59-59 59h0c-34 0-61-27-61-61V240h20 C242 240 260 222 260 200L260 200z"/>
+                      <path class="flickity-illo__color5" fill="#C25" d="M180 220h-60V100h60c6 0 10 5 10 10v100C190 216 186 220 180 220z"/>
+                      <path class="flickity-illo__color1" fill="#19F" d="M240 220h-20c-6 0-10-5-10-10V110c0-6 5-10 10-10h20V220z"/>
+                      <rect class="flickity-illo__color2" fill="#333" x="230" y="280" width="90" height="80"/>
+                      <circle class="flickity-illo__color4" fill="#ED0" cx="180" cy="280" r="10"/>
+                      <line class="flickity-illo__thumb" stroke="#333" stroke-width="60" stroke-linecap="round" x1="262" y1="290" x2="152" y2="240"/>
+                      <path class="flickity-illo__color4" fill="#ED0" d="M190 50h-20c-6 0-10-5-10-10v0c0-6 5-10 10-10h20c6 0 10 5 10 10v0C200 46 196 50 190 50z"/>
+                      <path class="flickity-illo__color5" fill="#C25" d="M80 220L80 220c-11 0-20-9-20-20v-80c0-11 9-20 20-20h0V220z"/>
+                      <path class="flickity-illo__color5" fill="#C25" d="M40 220L40 220c-11 0-20-9-20-20v-80c0-11 9-20 20-20h0V220z"/>
+                    </svg>
+                </div>
+                <div class="showcase-item__text">
+                  <h3 class="showcase-item__title">Flickity</h3>
+                  <p class="showcase-item__description">Touch, responsive, flickable carousels</p>
+                </div>
+              </a>
+            </li>
+      
+            <li class="showcase-item">
+              <a class="showcase-item__link" href="https://packery.metafizzy.co">
+                <div class="showcase-item__image">
+                    <svg class="packery-illo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 700 700" width="100" height="100">
+                      <path class="packery-illo__item" fill="#C09" d="M172 180H48c-4 0-8-4-8-8V48c0-4 4-8 8-8h124c4 0 8 4 8 8v124C180 176 176 180 172 180z"/>
+                      <path class="packery-illo__item" fill="#C09" d="M172 340H48c-4 0-8-4-8-8V208c0-4 4-8 8-8h124c4 0 8 4 8 8v124C180 336 176 340 172 340z"/>
+                      <path class="packery-illo__item" fill="#C09" d="M492 660H368c-4 0-8-4-8-8V528c0-4 4-8 8-8h124c4 0 8 4 8 8v124C500 656 496 660 492 660z"/>
+                      <path class="packery-illo__item" fill="#C09" d="M652 660H528c-4 0-8-4-8-8V528c0-4 4-8 8-8h124c4 0 8 4 8 8v124C660 656 656 660 652 660z"/>
+                      <path class="packery-illo__item" fill="#C09" d="M652 500H368c-4 0-8-4-8-8V368c0-4 4-8 8-8h284c4 0 8 4 8 8v124C660 496 656 500 652 500z"/>
+                      <path class="packery-illo__item" fill="#C09" d="M332 660H48c-4 0-8-4-8-8V368c0-4 4-8 8-8h284c4 0 8 4 8 8v284C340 656 336 660 332 660z"/>
+                      <path class="packery-illo__item" fill="#C09" d="M652 340H528c-4 0-8-4-8-8V48c0-4 4-8 8-8h124c4 0 8 4 8 8v284C660 336 656 340 652 340z"/>
+                      <path class="packery-illo__draggie" fill="#EA0" d="M572 440H288c-4 0-8-4-8-8V148c0-4 4-8 8-8h284c4 0 8 4 8 8v284C580 436 576 440 572 440z"/>
+                      <g>
+                        <path class="packery-illo__hand" fill="white" d="M530 250c-11 0-20 9-20 20v-10c0-11-9-20-20-20s-20 9-20 20c0-11-9-20-20-20s-20 9-20 20c0-11-9-20-20-20
+                          s-20 9-20 20v20c-17 0-30 13-30 30c0 11 6 20 14 25l19 35c10 18 30 30 51 30h28
+                          c43 0 78-35 78-78V270C550 259 541 250 530 250z"/>
+                        <line class="packery-illo__hand-line" stroke="#EA0" fill="none" stroke-width="16" stroke-linecap="round" x1="430" y1="300" x2="430" y2="340"/>
+                        <line class="packery-illo__hand-line" stroke="#EA0" fill="none" stroke-width="16" stroke-linecap="round" x1="470" y1="300" x2="470" y2="340"/>
+                        <line class="packery-illo__hand-line" stroke="#EA0" fill="none" stroke-width="16" stroke-linecap="round" x1="510" y1="300" x2="510" y2="340"/>
+                      </g>
+                    </svg>
+                </div>
+                <div class="showcase-item__text">
+                  <h3 class="showcase-item__title">Packery</h3>
+                  <p class="showcase-item__description">Gapless, draggable grid layouts</p>
+                </div>
+              </a>
+            </li>
+      
+            <li class="showcase-item">
+              <a class="showcase-item__link" href="http://logo.pizza">
+                <div class="showcase-item__image">
+                    <svg class="logo-pizza-illo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 700 700" width="100" height="100">
+                      <path class="logo-pizza-illo__outline" fill="#C25" d="M513 91c-9-0-17 5-21 12l-80 160c-3 5-6 10-11 15l-47 47
+                        c-5 5-12-1-9-7l32-64c5-11-2-23-14-23h-0c-121 0-268 70-327 180
+                        C-9 497 35 609 196 609c138 0 279-85 327-180v0c5-11-2-23-14-23h-77c-13 0-19-15-10-24
+                        l81-81c5-5 11-8 18-8l0 0c13 0 19 15 10 24L494 354c-6 6-6 14 0 20c3 3 6 4 10 4
+                        c4 0 7-1 10-4l80-80h53c9 0 17-5 21-13C707 190 656 97 513 91z M334 281l-59 117
+                        c-2 5-7 8-13 8H97c-4 0-6-4-3-7c49-64 143-114 236-124C333 275 335 278 334 281z
+                         M70 441c2-4 6-7 10-7h168c4 0 7 4 5 8l-59 118c-2 4-6 6-11 6
+                        C106 565 38 521 70 441z M466 441c-49 64-143 114-236 124c-3 0-6-3-4-6l59-117
+                        c2-5 7-8 13-8h166C466 434 468 438 466 441z M446 318l-81 81c-5 5-11 8-18 8l0 0
+                        c-13 0-19-15-10-24l81-81c5-5 11-8 18-8l0 0C449 294 455 309 446 318z M447 258L506 139
+                        c2-4 6-7 11-6c101 7 140 60 114 126c-2 4-6 7-10 7H452C448 266 445 262 447 258z"/>
+                      <path class="logo-pizza-illo__slice" fill="#ED0" d="M334 281l-59 117c-2 5-7 8-13 8H97c-4 0-6-4-3-7
+                        c49-64 143-114 236-124C333 275 335 278 334 281z"/>
+                      <path class="logo-pizza-illo__slice" fill="#ED0" d="M70 441c2-4 6-7 10-7h168c4 0 7 4 5 8l-59 118c-2 4-6 6-11 6
+                        C106 565 38 521 70 441z"/>
+                      <path class="logo-pizza-illo__slice" fill="#ED0" d="M466 441c-49 64-143 114-236 124c-3 0-6-3-4-6l59-117
+                        c2-5 7-8 13-8h166C466 434 468 438 466 441z"/>
+                      <path class="logo-pizza-illo__slice" fill="#ED0" d="M447 258L506 139c2-4 6-7 11-6c101 7 140 60 114 126c-2 4-6 7-10 7H452
+                        C448 266 445 262 447 258z"/>
+                    </svg>
+                </div>
+                <div class="showcase-item__text">
+                  <h3 class="showcase-item__title">Logo Pizza</h3>
+                  <p class="showcase-item__description">Hot &amp; ready logos for sale</p>
+                </div>
+              </a>
+            </li>
+      
+            <li class="showcase-item">
+              <a class="showcase-item__link" href="http://fizzy.school">
+                <div class="showcase-item__image">
+                    <svg class="witchie-logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" width="200" height="200">
+                      <circle class="witchie-logo__moon" fill="white" cx="500" cy="500" r="500"/>
+                      <path class="witchie-logo__broom" fill="#EA0" d="M582 675a35 35 0 0 0 8-20 3 3 0 0 1 3-2h71a3 3 0 0 1 3 3 59 59 0 0 0 0 20 3 3 0 0 1-3 3h-79A3 3 0 0 1 582 675Zm219 4a13 13 0 0 0 13-14c-1-7-7-12-14-12h-44a3 3 0 0 0-3 3v21a3 3 0 0 0 3 3ZM299 660a203 203 0 0 1-27-36 8 8 0 0 0-4-3L178 582a13 13 0 0 0-18 12v77a8 8 0 0 0 8 8h22a5 5 0 0 1 2 10L164 703a8 8 0 0 0-4 7v28a13 13 0 0 0 18 12l146-63a3 3 0 0 0 1-5A197 197 0 0 1 299 660Z"/>
+                      <path class="witchie-logo__dress" fill="#333" d="M326 705h4a13 13 0 0 1 13 13v8a13 13 0 0 0 4 9l13 13a13 13 0 0 1 0 19l-56 56c-10 10-26-0-22-13L314 714A13 13 0 0 1 326 705Zm397-79c-27 0-47 26-37 54 3 7 11 16 17 19a42 42 0 0 0 19 5 38 38 0 0 0 7-1 8 8 0 0 0 6-8v-62a8 8 0 0 0-6-8 38 38 0 0 0-7-1M840 397c-3-15-33-23-77-23a521 521 0 0 0-59 4 5 5 0 0 1-5-2L567 177a8 8 0 0 0-7-4 8 8 0 0 0-8 8l1 227a5 5 0 0 1-4 5c-74 24-123 55-119 76 2 8 11 14 26 18a3 3 0 0 1 1 4l-11 11c-20 20-56 30-92 30-31 0-63-8-84-23a5 5 0 0 0-3-1 5 5 0 0 0-5 5c0 78 68 173 183 173h75a10 10 0 0 0 7-3l38-38a16 16 0 0 0 0-23l-34-34a10 10 0 0 1 0-14l15-15a3 3 0 0 1 5 2v15a5 5 0 0 0 5 5H674a4 4 0 0 0 3-7l-90-90a3 3 0 0 1 1-4c34-19 59-49 67-84a3 3 0 0 1 2-2c6-1 12-1 17-1 22 0 37 5 39 14 1 6 3 11 2 17-5 17 1 31 8 31a6 6 0 0 0 2-0C797 448 845 419 840 397Z"/>
+                    </svg>
+                </div>
+                <div class="showcase-item__text">
+                  <h3 class="showcase-item__title">Fizzy School</h3>
+                  <p class="showcase-item__description">Lessons in JavaScript for jQuery newbies</p>
+                </div>
+              </a>
+            </li>
+      
+        </ul> 
+      
+      </div>
+  
+      <p class="site-footer__copy">
+        <a href="https://twitter.com/metafizzyco">
+          <svg class="twitter-logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" width="30" height="30">
+            <path d="M512 97c-19 8-39 14-60 16 22-13 38-34 46-58-20 12-43 21-67 25-19-19-46-32-77-32-58 0-117 52-102 129-87-4-165-46-216-110-24 40-19 107 32 140-17 0-33-5-48-13v1c0 51 36 93 84 103-15 4-34 5-47 2 13 42 52 72 98 73-47 36-96 49-155 44 46 30 102 47 161 47 197 0 306-168 299-312 20-15 38-34 52-55z"/>
+          </svg>
+          Follow @metafizzyco on Twitter for Isotope updates
+        </a>
+      </p>
+  
+      <div class="mfzy-brand">
+        <a class="mfzy-brand__link" href="https://metafizzy.co">
+          <svg class="mfzy-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 144 144" width="36" height="36">
+            <title>Metafizzy logo</title>
+            <defs>
+              <path id="mfzy-logo__body" d="M 120 24 a 12 12 0 0 0-24 0 a 72 72 0 0 1 -1 11
+                a 40 40 0 0 0 -13 -8.5 A 12 12 0 1 0 61.1 25.1 c -8 2 -14 6 -19.6 11.6 
+                A 12 12 0 1 0 35.3 55.5 L 45.8 72.1 l -16 9.6 A 12 12 0 0 0 42.2 102.3
+                L 58 92.8 a 20 20 0 0 1 -0.2 11.9 l -5.2 15.5 a 12 12 0 0 0 22.8 7.6
+                l 1.1 -3.3 l 23.7 -14.2 a 12 12 0 0 0 5.2 -6.5 l 4 -12 A 50 50 0 0 0 111.9 76
+                a 52 52 0 0 0 -1.6 -12.8 C 115 57 120 44 120 24Z"/>
+              <path id="mfzy-logo__eye" d="M 0 6.5 a 6.5 6.5 0 0 1 13 0 c 0 3.5 -3 0.5 -6.5 0.5 s -6.5 3 -6.5 -0.5 Z"/>
+              <clippath id="mfzy-logo__body-clip">
+                <use xlink:href="#mfzy-logo__body"/>
+              </clippath>
+            </defs>
+            <use class="mfzy-logo__body-outline" xlink:href="#mfzy-logo__body" fill="#333" stroke="#333" stroke-width="16"/>
+            <use class="mfzy-logo__body-fill" xlink:href="#mfzy-logo__body"/>
+            <g class="mfzy-logo__stripes" clip-path="url(#mfzy-logo__body-clip)">
+              <rect fill="#E62" x="16" width="120" height="138"/>
+              <path fill="#C25" d="M96 24L16 72V0h80v24z"/>
+              <path fill="#EA0" d="M116 70L16 130v-26l95-57 5 23z"/>
+              <path fill="#19F" d="M136 138H16v-8l120-72v80z"/>
+            </g>
+            <path class="mfzy-logo__cut-ins" stroke="#333" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M 72 20.4 c 23 0 44 29 44 56
+              M 54 103.4 a 16 16 0 0 0 0 -10
+              M 96 98 c -2 2 -8 6 -8.5,6 l -8.4 25.1"/>
+            <g transform="translate(53 57) rotate(-31)">
+              <ellipse class="mfzy-logo__snout" cx="25" cy="21" rx="14" ry="9" fill="#FFF"/>
+              <use class="mfzy-logo__feature" xlink:href="#mfzy-logo__eye" fill="#333"/>
+              <use class="mfzy-logo__feature" xlink:href="#mfzy-logo__eye" fill="#333" transform="translate(29 0)"/>
+              <path class="mfzy-logo__feature" d="M 28.6 14 a 3 3 0 0 1 1.3 5.6 l -2.6 1.2 a 3 3 0 0 1 -2.6 0
+                l -2.6 -1.2 a 3 3 0 0 1 1.3 -5.6 Z" fill="#333"/>
+            </g>
+          </svg>
+          <svg class="mfzy-wordmark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 280 80" fill="none" stroke="#333" width="140" height="40">
+            <g transform="skewX(-18)">
+              <path stroke-width="8" d="M38 20h6c4 0 7 2 9 6l9 18l12-24h2v22
+              a20 22 0 0 0 20 22M48 22v28a12 15 0 0 1-24 0M98 44a6 6 0 0 0 0-12h-2
+              a8 10 0 0 0 0 20h14a8 10 0 0 0 8-10M118 12v30a8 10 0 0 0 16 0M150 36
+              q-4-4-8-4a8 10 0 1 0 8 10m0-14v14a8 10 0 0 0 8 10M184 20a9 9 0 0 0-18 0
+              v34a8 10 0 0 1-8 10M158 32h24v24M190 32h18l-12 20h18M216 32h18l-12 20h18
+              a8 10 0 0 0 8-10m0-14v14a8 10 0 0 0 16 0m0-14v38a6 6 0 0 1-12 0
+              c0-12 32-8 32-32c0-10-6-16-15-16M108 24h24a6 6 0 0 0 6-6M102 38h-4"/>
+              <g stroke-width="6">
+                <circle cx="38" cy="22" r="3"/>
+                <circle cx="182" cy="20" r="3"/>
+                <circle cx="269" cy="20" r="3"/>
+              </g>
+            </g>
+          </svg>
+        </a>
+      </div>
+  
+    </div>
+  
+  </footer>
+
+<!-- Looking for isotope.js? Use isotope.pkgd.min.js -->
+<!-- Isotope does NOT require jQuery. But it does make things easier -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+  <script src="js/isotope-docs.min.js?6"></script>
+
+
+</body>
+</html>
